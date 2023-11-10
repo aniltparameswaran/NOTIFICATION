@@ -98,7 +98,7 @@ export default {
   methods: {
     sendMessage() {
       console.log(this.message);
-      const url = `https://localhost:44304/api/Notification?message=${this.message}`;
+      const url = `http://aniltp-001-site1.htempurl.com/api/Notification?message=${this.message}`;
       console.log(url);
 
       fetch(url, {
@@ -128,7 +128,7 @@ export default {
   mounted() {
     // Connect to the SignalR hub
     this.hubConnection = new signalR.HubConnectionBuilder()
-  .withUrl("https://localhost:44304/notificationHub", {
+  .withUrl("http://aniltp-001-site1.htempurl.com/notificationHub", {
     skipNegotiation: true,
     transport: signalR.HttpTransportType.WebSockets,
     withCredentials: true, // Include credentials
